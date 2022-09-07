@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% block title %}Main{% endblock %}
+
+{% block newspaper %}
+    {% if all_cars %}
+        {% for a in all_cars %}
+            {% load static %}
+            <section class="u-clearfix u-grey-80 u-section-4" id="sec-0214">
+                <br>   </br>
+            </section>
+            <article class="u-clearfix u-grey-80 u-section-4" id="sec-0214">
+                            <div class="row ant009_post-post-blog-content">
+
+                                <div class="col-md-3 ant009_post-post-blog-image">
+                                    <img  src="{% static a.car_img %}"
+                                        alt="Воздействие на потребителя как стратегический рыночный план">
+                                    <!-- image -->
+                                </div>
+
+                                <div class="col-md-9 ant009_post-post-blog-info">
+
+                                    <h3>
+                                        <a href="cars_{{a.id}}"
+                                            title="Воздействие на потребителя как стратегический рыночный план">
+                                            {{a.car_title}} </a>
+                                    </h3>
+
+                                    <p class="entry-meta">
+                                        Опубликовано в {{a.car_date}} </p>
+
+                                    <p>{{a.car_short_text}}
+                                    </p>
+                                </div>
+
+                            </div>
+
+            </article>
+            <section class="u-clearfix u-grey-80 u-section-4" id="sec-0214">
+               <br>   </br>
+            </section>
+        {% endfor %}
+    {% else %}
+        HELLO
+    {% endif %}
+{% endblock %}
+
+{% block image %}
+    {% load static %}
+    <div id="tekst_sverhu_kartinki" style="background-image: url('{% static 'img/ant047_text/Cropped_Image_20220902_212717.jpg' %}');
+    background-size: cover; height:370px; padding-top:80px;">
+        <div></div>
+            <style>
+                h1{text-align:center;color:white;}
+                h3{text-align:center;color:white;}
+            </style>
+
+            <h1><strong>Alfa Romeo</strong></h1>
+            <h3>Italian manufacturer of premium cars.</h3>
+        </div>
+    </div>
+
+{% endblock %}

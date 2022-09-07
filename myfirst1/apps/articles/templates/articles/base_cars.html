@@ -1,0 +1,12 @@
+{% extends 'alfa_romeo1.html' %}
+
+{% block title %}test{% endblock %}
+
+{% block content %}
+    {% if all_cars %}
+        {% for a in all_cars%}
+            <a href="/articles/{{a.id}}">{{a.article_title}}</a>
+            <br class="year">{{a.article_date}}</br>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

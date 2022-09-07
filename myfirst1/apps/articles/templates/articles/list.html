@@ -1,0 +1,44 @@
+{% extends 'index_go.html' %}
+
+{% block title %}Main{% endblock %}
+
+{% block news %}
+    {% if latest_articles_list %}
+        {% for a in latest_articles_list %}
+            {% load static %}
+
+            <article class="art_net_theme-post-blog-ant009_post" id="post-75">
+                            <div class="row ant009_post-post-blog-content">
+
+                                <div class="col-md-3 ant009_post-post-blog-image">
+                                    <img  src="{% static a.article_img %}"
+                                        alt="Воздействие на потребителя как стратегический рыночный план">
+                                    <!-- image -->
+                                </div>
+
+                                <div class="col-md-9 ant009_post-post-blog-info">
+
+                                    <h3>
+                                        <a href="/articles/news_{{a.id}}"
+                                            title="Воздействие на потребителя как стратегический рыночный план">
+                                            {{a.article_title}} </a>
+                                    </h3>
+
+                                    <p class="entry-meta">
+                                        Опубликовано в {{a.article_date}} </p>
+
+                                    <p>{{a.article_view}}
+                                    </p>
+                                </div>
+
+                            </div>
+
+            </article>
+            <section class="u-clearfix u-grey-80 u-section-4" id="sec-0214">
+               <br>   </br>
+            </section>
+        {% endfor %}
+    {% else %}
+    {% endif %}
+{% endblock %}
+

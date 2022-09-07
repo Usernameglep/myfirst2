@@ -1,0 +1,23 @@
+{% extends 'car-detail2.html' %}
+
+{% block title %}{{car.car_title}}{% endblock %}
+
+{% block title1 %}{{car.car_title}}{% endblock %}
+
+{% block title2 %}{{car.car_title}}{% endblock %}
+
+{% block image %}
+{% load static %}
+<div class="ant029_shop-shop_detail_img"
+     style="background-image:url({% static car.car_img %});
+      background-size: cover; height:280px; padding-top:80px;">
+</div>
+{% endblock %}
+
+{% block text %}
+{{car.car_text}}
+{% endblock %}
+
+{% block price %}
+{{car.car_price}}
+{% endblock %}
